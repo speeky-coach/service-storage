@@ -6,10 +6,10 @@ process.env.MONGODB_URL = 'mongodb://localhost:27017';
 process.env.MONGODB_DBNAME = 'speeky_test';
 
 process.env.RABBITMQ_URL = 'amqp://localhost/speeky_test';
-process.env.RABBITMQ_CONNECTION_NAME = 'coaching_service';
+process.env.RABBITMQ_CONNECTION_NAME = 'storage_service';
 process.env.RABBITMQ_EXCHANGE = 'event_bus';
 process.env.RABBITMQ_EXCHANGE_TYPE = 'topic';
-process.env.RABBITMQ_QUEUE = 'coaching_service_queue';
+process.env.RABBITMQ_QUEUE = 'storage_service_queue';
 
 process.env.RABBITMQ_QUEUE_TEST = 'queue_test';
 process.env.RABBITMQ_VHOST_TEST = 'speeky_test';

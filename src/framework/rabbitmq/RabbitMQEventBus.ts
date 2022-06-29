@@ -4,6 +4,7 @@ import EventBus from '../domain/bus/EventBus';
 import { rabbitMQApp } from './RabbitMQApp';
 import DomainEventDTOMapper from '../infrastructure/DomainEventDTOMapper';
 import DomainEventDTO from '../infrastructure/DomainEventDTO';
+import { dtoEventMapper } from './dtoEventMapper';
 
 class RabbitMQEventBus<D extends DomainEvent, T extends DomainEventDTO> implements EventBus {
   constructor(private domainEventMapper: DomainEventDTOMapper<D, T>) {}
@@ -22,5 +23,7 @@ class RabbitMQEventBus<D extends DomainEvent, T extends DomainEventDTO> implemen
     });
   }
 }
+
+export const rabbitMQEventBus = new RabbitMQEventBus(dtoEventMapper);
 
 export default RabbitMQEventBus;
