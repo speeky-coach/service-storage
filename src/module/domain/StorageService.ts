@@ -2,13 +2,7 @@ import { Writable } from 'stream';
 import { UserId } from '../../framework/domain/types';
 
 interface StorageService {
-  createWriteStream(
-    userId: UserId,
-    conversationId: string,
-  ): {
-    url: string;
-    stream: Writable;
-  };
+  createWriteStream(userId: UserId, filename: string): Writable;
 }
 
 export default StorageService;

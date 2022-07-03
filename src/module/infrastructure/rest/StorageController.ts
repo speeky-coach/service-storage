@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 // import { AuthenticatedRequest } from '../../../../framework/express/types';
 import StorageApplication from '../../application/StorageApplication';
 import { storageApplication } from '../storageApplication';
-import ExpressDTOPresenter from '../../../framework/express/ExpressDTOPresenter';
+import ExpressPresenter from '../../../framework/express/ExpressPresenter';
 
 class StorageController {
   private application: StorageApplication;
@@ -16,10 +16,10 @@ class StorageController {
       // const authenticatedRequest = request as AuthenticatedRequest;
 
       const userId = request.query.userId as string;
-      const conversationId = request.query.conversationId as string;
+      const filename = request.query.filename as string;
 
-      this.application.uploadAudioFile(request, userId, conversationId).on('finish', () => {
-        const presenter = new ExpressDTOPresenter(response);
+      this.application.uploadAudioFile(request, userId, filename).on('finish', () => {
+        const presenter = new ExpressPresenter(response);
 
         presenter.returnEmpty();
       });

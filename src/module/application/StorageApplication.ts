@@ -7,17 +7,16 @@ import StorageService from '../domain/StorageService';
 class StorageApplication {
   constructor(private storageService: StorageService, private eventBus: EventBus) {}
 
-  public uploadAudioFile(readableStream: Readable, userId: UserId, conversationId: string): Writable {
-    const { stream, url } = this.storageService.createWriteStream(userId, conversationId);
+  public uploadAudioFile(readableStream: Readable, userId: UserId, filename: string): Writable {
+    const stream = this.storageService.createWriteStream(userId, filename);
 
     readableStream.pipe(stream).on('finish', () => {
-      this.eventBus.publish([
+      this.eventBus.publish(
         new AudioUploadedDomainEvent({
-          url,
           userId,
-          conversationId,
+          filename,
         }),
-      ]);
+      );
     });
 
     return stream;
