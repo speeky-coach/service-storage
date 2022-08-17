@@ -1,9 +1,16 @@
 # Speeky Storage Service
 
-## Plug-in Dependencies
+## Deploy manually to Kubernetes
 
-- domain `domain-core-1.0.0v`
-- express `express-core-1.0.0v`
-- infrastructure `infrastructure-core-1.0.0v`
-- jest `jest-core-1.0.0v`
-- rabbitmq `rabbitmq-core-1.0.0v`
+```
+docker build -t brucegroverlee/speeky-service-storage .
+```
+
+```
+docker push brucegroverlee/speeky-service-storage
+```
+
+```
+cd ./kubernetes
+kubectl apply -f deployment.yaml
+```

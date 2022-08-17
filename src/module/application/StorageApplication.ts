@@ -1,6 +1,5 @@
 import { Readable, Writable } from 'stream';
-import EventBus from '../../framework/domain/bus/EventBus';
-import { UserId } from '../../framework/domain/types';
+import { EventBus, UserId } from '@speeky/framework';
 import AudioUploadedDomainEvent from '../domain/AudioUploadedDomainEvent';
 import StorageService from '../domain/StorageService';
 

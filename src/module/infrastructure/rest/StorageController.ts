@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
+import { ExpressPresenter } from '@speeky/framework';
 // import { AuthenticatedRequest } from '../../../../framework/express/types';
 import StorageApplication from '../../application/StorageApplication';
 import { storageApplication } from '../storageApplication';
-import ExpressPresenter from '../../../framework/express/ExpressPresenter';
 
 class StorageController {
   private application: StorageApplication;

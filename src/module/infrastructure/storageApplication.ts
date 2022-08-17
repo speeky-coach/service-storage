@@ -1,4 +1,4 @@
-import { rabbitMQEventBus } from '../../framework/rabbitmq/RabbitMQEventBus';
+import { rabbitMQEventBus } from '../../setup/rabbitmq';
 import StorageApplication from '../application/StorageApplication';
 import { storageServiceAdapter } from './StorageServiceAdapter';
 

@@ -1,5 +1,4 @@
-import DomainEvent from '../../framework/domain/bus/DomainEvent';
-import { UserId } from '../../framework/domain/types';
+import { DomainEvent, UserId } from '@speeky/framework';
 
 export interface AudioFile {
   userId: UserId;
